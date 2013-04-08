@@ -2,70 +2,66 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Ranger 85 Photobooth</title>	
-	<link rel="stylesheet" type="text/css" href="assets/css/styles.css" media="screen"/>
+	<title>Channel Islands Whalewatching Photobooth</title>	
+	<link rel="stylesheet" type="text/css" href="assets/css/ui.css" media="screen"/>
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css" />
 	<link rel="stylesheet" type="text/css" href="assets/countdown/jquery.countdown.css" media="screen"/>
-	<link rel="stylesheet" type="text/css" href="assets/keyboard/keyboard.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="assets/keyboard/keyboard2.css" media="screen">
 </head>
 <body>
-
-	<a href="#" class="helpButton">&gt;&gt; How To Use &lt;&lt;</a>
-	<div id="instructionsBox">
-		<br />
-		<p><span>Step 1:</span> Press the "SHOOT" button.</p>
-		<br />
-		<p><span>Step 2:</span> Wait for the FIVE second countdown.</p>
-		<br />
-		<p><span>Step 3:</span> Pose and SAY CHEESE.</p>
-		<br />
-		<p><span>Step 4:</span> Enter your NAME, EMAIL and CONFIRM YOUR EMAIL then press OK to save your picture.</p>
-		<p class="subText">*The picture will emailed to you after we get to shore.</p>
-		<br />
-		<p class="lastStep"><span>Step 5:</span> Come back again soon!</p>			
-		<a class="nextButton" href="#">Press Here to Continue.</a>			
-	</div>
-	<div id="thankyouBox">
-		<img src="assets/img/ciwwlogo.png" />
-		<br />
-		<div class="thankyouMessage" style="margin-top:25px;overflow:hidden;height:250px;"></div>		
-		<a class="thankyouButton" href="#">Touch here to finish your session.</a>			
-	</div>
-
-	<div class="contentContainer">		
-		<div id="camera">
-    		<div class="webcam invis">
-				<video id="webcam"></video>
+	<div class="pageBackground"></div>
+	<div class="contentContainer">
+		<header><!-- Add link to channelislandswhalewatching.com on thank you page-->
+			<img src="assets/img/ciww-logo-raised.png" />			
+			<button class="headerTab"><p class="countdown"></p></button>
+		</header>
+		<section class="leftCol">
+			<button class="helpButton"></button>
+			<button class="videoButton"></button>
+		</section>
+		<section class="centerCol">
+			<div id="firstFrame" class="instructions" id="test">		
+				<button class="contButton"></button>			
 			</div>
-			<div class="canvContainer">
-				<canvas id="c1" height="950" width="1200" align="center" ></canvas>
+			<div id="secondFrame" class="camera">
+				<div class="webcam invis">
+					<video id="webcam"></video>
+				</div>
+				<div class="canvContainer">
+					<canvas id="c1" height="860" width="1148" align="center" style="padding:7px 0 0 7px;"></canvas>
+				</div>
+				<div class="previewButtons">
+					<button class="keepButton"></button>
+					<button class="retakeButton"></button>
+				</div>
+				<audio id="shutter" source src="assets/sounds/shutterclick.mp3" type="audio/mpeg"></audio>
 			</div>
-		    <div id="buttons">
-		    	<div class="buttonPane">
-		        	<a id="shootButton" href="" class="blueButton">Shoot!</a>
-		        </div>		               
-		        <div class="buttonPane hidden" style="margin-top: 10px;">		        	       
-		        	<a id="cancelButton" class="blueButton" href="">Try Again?</a> <a id="uploadButton" class="greenButton" href="">Keep This Photo!</a>
-		        </div>
-		        <form id="dataForm" >
-		        	<section id="photoHolder" class="hidden"><img id="photo" /></section>    
-				    <section><label for="name">Enter your name: </label><input id="inptName" name="inptName" type="text" class="qwerty" required="required"/></section>
-				    <section><label for="email">Enter your email: </label><input id="inptEmail" name="inptEmail" type="email" class="qwerty" required="required"/></section>
-				    <section><label for="confirm">Confirm email: </label><input id="inptConfirm" name="inptConfirm" type="email" class="qwerty" required="required"/></section>				    
-				    <a id="confirmButton" href="" class="greenButton">OK</a>
+			<div id="thirdFrame" class="form">
+				 <form id="dataForm" >
+		        	<section id="photoHolder" class="hidden"><img id="photo" src="" /></section>    
+				    <section><input id="firstName" name="inptName" type="text" class="qwerty firstName" required="required" placeholder="Enter your FIRST NAME"/></section>
+				    <section><input id="lastName" name="inptName" type="text" class="qwerty lastName" required="required" placeholder="Enter your LAST NAME"/></section>
+				    <section><input id="firstEmail" name="inptEmail" type="email" class="qwerty firstEmail" required="required" placeholder="Enter your E-MAIL ADDRESS"/></section>
+				    <section><input id="confirmEmail" name="inptConfirm" type="email" class="qwerty confirmEmail" required="required" placeholder="CONFIRM your e-mail address"/></section>			
 				</form>
-		    </div>
-		</div>				
+				<div id="thankyouBox" style="display:none;">
+					<img src="assets/img/ciwwlogo.png" />
+					<br />
+					<div class="thankyouMessage" style="margin-top:25px;overflow:hidden;height:250px;"></div>		
+					<button class="formsButton">Finish</button>			
+				</div>				
+			</div>
+		</section>
+		<section class="rightCol">
+			<button class="shootButton"></button>
+		</section>							
 	</div>
 	<script type="text/javascript" src="assets/js/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery-ui.js"></script>
-	<script type="text/javascript" src="assets/countdown/jquery.countdown.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-ui.js"></script>	
 	<script type="text/javascript" src="assets/keyboard/jquery.keyboard.js"></script>
-	
+	<script type="text/javascript" src="assets/js/scripts.js"></script>	
 	<script type="text/javascript" src="assets/canvas/jcanvas.js"></script>
 	<script type="text/javascript" src="assets/camera/camboot.js"></script> 
-	<script type="text/javascript" src="assets/camera/cameffects.js"></script>
-	<script type="text/javascript" src="assets/canvas/jquery.dynamocanvas.js"></script>
-	<script type="text/javascript" src="assets/js/script.js"></script>
+	<script type="text/javascript" src="assets/camera/cameffects.js"></script>	
 </body>
 </html>

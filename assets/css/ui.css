@@ -1,0 +1,252 @@
+body {
+	color: #888;
+	font: 14px/1.3 'Segoe UI', Arial, sans-serif;
+	height:1080px;
+	overflow:hidden;
+	width:1920px;
+}
+
+button {
+	/* remove default button styles */	
+	border:none;
+	display: block;
+	padding:0;
+	margin:0;		
+}
+/*--------------------------
+ 	STATIC BACKGROUND STYLES 
+ ---------------------------*/
+.pageBackground {
+	background:url('../img/channel-islands.jpg');
+	height:1080px;width:1920px;
+	margin: -1px 0 0 -8px;
+	position:fixed;
+}
+
+
+/*--------------------------
+ 	BEGIN PAGE STYLES 
+ ---------------------------*/
+.contentContainer {
+	position:relative;
+	z-index:100;
+}
+.contentContainer > section {
+	float:left;	
+}
+
+
+/*--------------------------
+ 	HEADER STYLES 
+ ---------------------------*/
+.contentContainer > header {
+	background:url('../img/top-bar.png');
+	height:101px;width:1920px;
+	text-align:center;
+	margin: -8px 0 0 -8px;
+}
+
+.contentContainer > header > .headerTab {
+	background-color: transparent;
+	background-image: url('../img/countdown-box.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	display:none;
+	margin: -15px auto 0;	
+	width: 100px;height: 100px;	
+}
+
+.contentContainer > header > .headerTab > p {
+	color:#00FF00;
+	font-size:60px;
+}
+
+/*--------------------------
+ 	LEFT COLUMN STYLES 
+ ---------------------------*/
+.contentContainer > .leftCol {	
+	margin-left:10px;
+	overflow:auto;
+	width: 350px;height: 900px;
+}
+.contentContainer > .leftCol > button {
+    background-size: contain !important;    
+    height: 248px;
+    margin: 175px auto 0;
+    width: 248px;	
+}
+.contentContainer > .leftCol > .helpButton {
+	background:url('../img/help-button.png');
+}
+.contentContainer > .leftCol > .videoButton {
+	background:url('../img/video-button.png');
+}
+
+
+
+
+/*--------------------------
+ 	CENTER COLUMN STYLES 
+ ---------------------------*/
+.contentContainer > .centerCol {
+	margin:95px 0 0;		
+	width:1200px;height: 900px;
+}
+.contentContainer > .centerCol> .camera > .previewButtons {
+	display: none;	
+	position: absolute;	
+	right: -175px;bottom: 175px;
+	width: 160px;
+}
+.contentContainer > .centerCol> .camera > .previewButtons > button {
+	width:150px;height: 150px;
+}
+.contentContainer > .centerCol> .camera > .previewButtons > .keepButton {
+	background-color:transparent;
+	background-image:url('../img/keep-button.png');
+}
+.contentContainer > .centerCol> .camera > .previewButtons > .retakeButton {
+	background-color:transparent;
+	background-image:url('../img/re-take-button.png');
+	margin-top:25px;
+} 
+
+/*.contentContainer > .centerCol > div {	
+	border:thin groove black;
+	width:1162px;width:874px;
+}*/
+
+
+
+/*--------------------------
+ 	RIGHT COLUMN STYLES 
+ ---------------------------*/
+.contentContainer > .rightCol {
+	overflow:auto;
+	width: 350px;height: 900px;
+}
+.contentContainer > .rightCol > .shootButton {
+	background-color: transparent !important;
+	background-image:url('../img/shoot-button-inactive.png');
+	background-size: contain !important;    
+    height: 248px;
+    margin: 175px auto 0;
+    width: 248px;	
+}
+
+/*--------------------------
+ 	ISTRUCTIONS STYLES 
+ ---------------------------*/
+.contentContainer > .centerCol > .instructions {
+	background: url('../img/help-box.png');
+	position:relative;
+	width:1162px;height:874px;
+}
+
+.contentContainer > .centerCol > .instructions > .contButton {
+	background: url('../img/cont-button.png');
+	bottom: 15px;    
+    left: 507px;
+    position: absolute;    
+	width:148px;height:148px;
+}
+
+
+/*--------------------------
+ 	CAMERA STYLES 
+ ---------------------------*/
+.contentContainer > .centerCol > .camera{
+	background: url('../img/cam-box.png');
+	position:relative;
+	width:1162px;height:874px;
+}
+
+
+/*--------------------------
+ 	FORM STYLES 
+ ---------------------------*/
+.contentContainer > .centerCol > .form {
+	width:1152px;
+	
+}
+.contentContainer > .centerCol > .form > #dataForm > section {
+	text-align:center;
+}
+.contentContainer > .centerCol > .form > #dataForm > section > input {	
+	border: 5px solid silver;
+	box-shadow: 0px 0px 10px 0px black;
+	font-size:48px;
+	display:none;	
+	margin-top: 75px;
+	margin-left: -125px;
+	width:800px;	
+}
+
+
+
+/*--------------------------
+ 	HELPER STYLES 
+ ---------------------------*/
+.invis {
+	position: absolute;
+	left: -9999px;
+}
+.ui-keyboard {
+	background-image: url('../img/keyboard-bg.png') !important;
+	background-color: transparent !important;
+	background-size: contain !important;
+	position: absolute !important;
+	left: 375px !important;
+	top: 259px !important;
+	display: block !important;	
+	border: none !important;
+	width: 1152px !important;
+	height: 546px !important;
+	margin-top:100px !important;
+}
+.ui-keyboard-keyset {
+	padding-top:25px !important;
+}
+.ui-keyboard-button {	
+	background-image: url("../img/key-board-key-button.png") !important;
+	background-color: transparent !important;
+	background-repeat:no-repeat !important;
+	background-size:contain !important;
+	border: none !important;
+	color: #2779aa !important;
+	display:inline !important;
+	font-size:24px !important;
+	font-weight: bold !important; 	
+	margin: 8px 10px !important;
+	width: 84px !important;height: 84px !important;			
+}
+.ui-keyboard-actionkey {
+	background-image: url("../img/keyboard-long-button.png") !important;
+	background-color: transparent !important;
+	background-repeat:no-repeat !important;
+	background-size:contain !important;
+	border: none !important;
+	color: #2779aa !important;
+	display:inline !important;
+	font-size:24px !important;
+	font-weight: bold !important; 	
+	margin: 10px !important;
+	width: 150px !important;height: 86px !important;		
+}
+
+.ui-keyboard-accept {
+	color:transparent !important;
+	background-image: url("../img/next-button-inactive.png") !important;
+	position: absolute !important;
+	top: -175px !important;
+	width: 150px !important;height: 150px !important;
+}
+.ui-keyboard-invalid-input {
+	background-image: url("../img/next-button-inactive.png") !important;
+}
+.ui-keyboard-valid-input {
+	background-image: url("../img/next-button-active.png") !important;
+}
+
+
+
