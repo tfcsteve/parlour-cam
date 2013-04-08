@@ -213,8 +213,7 @@ $(document).ready(function(){
 	
 	
 	
-	function takepicture() {
-		
+	function takepicture() {		
 		//jcanvas object to put on watermark
 		$("#c1").addLayer({
 			method : "drawImage",
@@ -239,7 +238,7 @@ $(document).ready(function(){
 		//assign data url to image source.		 		
  		photo.setAttribute('src', data);
  		
- 		var encoded = encodeURIComponent( $inptPhoto.attr( "src" ) );
+ 		var encoded = encodeURIComponent( $('#photo').attr( "src" ) );
 		var formData = "&name="+$input[0].val()+"&photo="+encoded+"&email="+$input[2].val();
  		
  		$.ajax({			
