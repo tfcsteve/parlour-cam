@@ -16,12 +16,11 @@ $(document).ready(function(){
 	 */
 	var $button = [$('.contButton'), $('.helpButton'), $('.videoButton'), $('.shootButton'), $('.formButton'), $('.keepButton'), $('.retakeButton')];
 	
-	var $input = [$('#firstName'), $('#lastName'), $('#firstEmail'), $('#confirmEmail')];
+	var $input = [$('#firstName'), $('#lastName'), $('#firstEmail'), $('#confirmEmail'), $("#photo")];
 	
 	var $countdownBox = $('.headerTab');	
 	var $countdownDigit = $('.countdown');
 	var $previewButtons = $('.previewButtons');
-	
 	
 	/*----------------------------------
 	Bind event listeners
@@ -140,7 +139,7 @@ $(document).ready(function(){
 		lockInput: false,
 		restrictInput: false,
 		resetDefault: true,
-		stayOpen: true,
+		stayOpen: false,
 		acceptValid: true,
 		accepted: function(e, keyboard, el){
 			if (keyboard.$el.hasClass('firstName')){
@@ -157,7 +156,11 @@ $(document).ready(function(){
 				$input[3].focus();			
 			}else{
 				takePicture();
-			}
+				$frame[1].hide();				
+				$frame[2].hide();	
+				$frame[0].show();	
+				return true;
+			}			
 		},
 		//validate: ,
 		//switchInput : function(keyboard, goToNext, isAccepted) {},
@@ -210,10 +213,13 @@ $(document).ready(function(){
 		}
 	});	
 	
+
+	/*----------------------------------
+	Finalize photograph
+	----------------------------------*/	
 	
 	
-	
-	function takepicture() {		
+	function takePicture() {		
 		//jcanvas object to put on watermark
 		$("#c1").addLayer({
 			method : "drawImage",
@@ -238,27 +244,21 @@ $(document).ready(function(){
 		//assign data url to image source.		 		
  		photo.setAttribute('src', data);
  		
- 		var encoded = encodeURIComponent( $('#photo').attr( "src" ) );
+ 		var encoded = encodeURIComponent( $input[4].attr( "src" ) );
 		var formData = "&name="+$input[0].val()+"&photo="+encoded+"&email="+$input[2].val();
  		
  		$.ajax({			
 			type: "POST",
 			url: "uploads/uploads.php",
-			data: formData,					
-			success: function() {
-				console.log("success");
-				togglePane();
-				video.play();																		
-				return false;						
-			}				
+			data: formData,
+			success: function(){
+				//reset application						
+				video.play();				
+			}						
 		});
 		
 		//clear fields
 		document.getElementById("dataForm").reset();		
  		return false;
- 	}
-	
-	
-	
-		
+ 	}	
 });
