@@ -3,14 +3,14 @@
  * This file should be on the remote host.
  */
  	//connect to local db
-	$con = mysqli_connect("localhost", "theshoe", "asdlkd2013!", "theshoe_cam_data");
+	$con = mysqli_connect("your_db_host", "your_db_user", "your_db_pass", "your_db_name");
 	// Check connection
 	if (mysqli_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 	
 	$guest = $_GET['email'];
-	$sql = "SELECT * FROM `theshoe_cam_data`.`data` WHERE `email` = '$guest'";
+	$sql = "SELECT * FROM `your_db_name`.`data` WHERE `email` = '$guest'";
 	$result = mysqli_query($con, $sql);
 	
 	/* numeric array */
@@ -18,7 +18,7 @@
 	//printf ("%s %s %s %s %s %s \n", $row[0], $row[1], $row[2], $row[3], $row[4], $row[5]);
 	if ($row[5] == 0){
 		//update confirmed datafield 
-		$confirmed = "UPDATE `theshoe_cam_data`.`data` SET `confirmed` = '1' WHERE `data`.`id` =$row[0];";
+		$confirmed = "UPDATE `your_db_name`.`data` SET `confirmed` = '1' WHERE `data`.`id` =$row[0];";
 		mysqli_query($con, $confirmed);
 	}
 	
